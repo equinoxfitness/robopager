@@ -76,19 +76,22 @@ This file lists the information of all the jobs that you want to
 monitor. Each job must have a unique name. You could find examples below
 for both types of job.
 
-**Daily Email Checks** \* type: email \* pd\_description: a brief
-description of the check job \* pd\_service: the "Integration Key" of a
-PagerDuty service only for this specific job, usually consists of 32
-characters \* senders: list of senders that robopager will be monitoring
-for particular emails \* delivery\_time: the expected delivery time of
-emails you are monitoring; emails received before this time will not be
-scanned. Please pay attention to your local timezone \* check\_time: the
-time at which robopager actually starts checking for delivery. Even if
-an email is expected to arrive at 7:00AM we may wait untill 7:15 to
-account for minor latency and avoid false alarms. Please pay attention
-to pass the time that is in the same timezone where you run the jobs,
-such as your local computer or cloud server, etc. \* subjects: a list of
-email subjects requires to satisify the check
+**Daily Email Checks**
+-  type: email
+-  pd\_description: a brief description of the check job
+-  pd\_service: the "Integration Key" of a PagerDuty service only for this
+specific job, usually consists of 32 characters
+-  senders: list of senders that robopager will be monitoring
+   for particular emails
+-  delivery\_time: the expected delivery time of emails you are monitoring;
+   emails received before this time will not be scanned.
+   Please pay attention to your local timezone
+-  check\_time: the time at which robopager actually starts checking for delivery.
+   Even if an email is expected to arrive at 7:00AM we may wait untill 7:15 to
+   account for minor latency and avoid false alarms. Please pay attention to
+   pass the time that is in the same timezone where you run the jobs,
+   such as your local computer or cloud server, etc.
+-  subjects: a list of email subjects requires to satisify the check
 
 ::
 
