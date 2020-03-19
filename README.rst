@@ -137,8 +137,8 @@ Quick Start
 After finish all the setups above, you can start to use the tool to help
 monitor you scheduled jobs. 
 Robopager has two modes:
--  Single Job Mode: This will run the specific check and exit when complete. Execute with a
-   -c parameter and a specific job name you want to run. For example:
+-  Single Job Mode: This will run the specific check and exit when complete. Execute with
+   a -c parameter and a specific job name you want to run. For example:
 
    ::
 
