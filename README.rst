@@ -45,8 +45,7 @@ you to choose the function mode.
 -  enable\_redis: enter "True" if you want to use Redis, which is highly
    recommended because of API rate limit in PagerDuty; otherwise
    "False". Please refer to Note section for more information about
-   Redis and please refer to this
-   **`link <https://v2.developer.pagerduty.com/docs/rate-limiting>`__**
+   Redis and please refer to this `link <https://v2.developer.pagerduty.com/docs/rate-limiting>`_
    for more details about API rate limit.
 -  redis: enter the server and database information to get access to
    redis database, if you opt to use redis to store the job cache
@@ -137,12 +136,14 @@ Quick Start
 After finish all the setups above, you can start to use the tool to help
 monitor you scheduled jobs. 
 Robopager has two modes:
+
 -  Single Job Mode: This will run the specific check and exit when complete. Execute with
    a -c parameter and a specific job name you want to run. For example:
 
    ::
 
-    python3 -m robopager.robopager -c unique_email_check_job_name -y checklist_file_path -cf core -p config_file_path
+    python3 -m robopager.robopager -c unique_email_check_job_name -y checklist_file_path
+    -cf core -p config_file_path
 
 -  Service Mode: This will execute all the check jobs in the
    checklist.yaml file.
@@ -229,5 +230,4 @@ Contributing
 ------------
 
 Contributions to Robopager are welcome! Please reference guidelines to
-help with setting up your development environment
-**`here <https://github.com/equinoxfitness/robopager/blob/master/CONTRIBUTING.rst>`__**
+help with setting up your development environment `here <https://github.com/equinoxfitness/robopager/blob/master/CONTRIBUTING.rst>`_
