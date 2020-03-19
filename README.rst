@@ -77,10 +77,11 @@ monitor. Each job must have a unique name. You could find examples below
 for both types of job.
 
 **Daily Email Checks**
+
 -  type: email
 -  pd\_description: a brief description of the check job
 -  pd\_service: the "Integration Key" of a PagerDuty service only for this
-specific job, usually consists of 32 characters
+   specific job, usually consists of 32 characters
 -  senders: list of senders that robopager will be monitoring
    for particular emails
 -  delivery\_time: the expected delivery time of emails you are monitoring;
@@ -93,7 +94,7 @@ specific job, usually consists of 32 characters
    such as your local computer or cloud server, etc.
 -  subjects: a list of email subjects requires to satisify the check
 
-::
+   ::
 
     unique_email_check_job_name:
         type: email
