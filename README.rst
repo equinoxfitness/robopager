@@ -14,7 +14,7 @@ call depending on your choice.
 Installation
 ------------
 
-Robopager requires Python 3.6+ **(need to comfirm)**
+Robopager requires Python 3.6+
 
 ::
 
@@ -27,7 +27,8 @@ Setup Instructions
 
 Before start using this tool, you need to configure the settings in the
 **etl.cfg** and create your **checklist.yaml** file. You can find
-example files in this folder and change to your own values.
+example files above and change to your own values. Detailed explanations
+as below.
 
 1. etl.cfg
 ~~~~~~~~~~
@@ -126,28 +127,28 @@ warnings at 80% of threshold
 Quick Start
 -----------
 
-After finish all the setups, you can start to use the tool to help
+After finish all the setups above, you can start to use the tool to help
 monitor you scheduled jobs. Robopager has two modes: \* Single Job Mode:
 This will run the specific check and exit when complete. Execute with a
 -c parameter and a specific job name you want to run. For example:
 
 ::
 
-    python3 -m robopager.robopager -c unique_email_check_job_name
+    python3 -m robopager.robopager -c unique_email_check_job_name -y checklist_file_path -cf core -p config_file_path
 
 -  Service Mode: This will execute all the check jobs in the
    checklist.yaml file.
 
    ::
 
-       python3 -m robopager.robopager
+       python3 -m robopager.robopager -y checklist_file_path -cf core -p config_file_path
 
-   In service mode, if you want to specify a certian checklist among
-   several checklist file, you can:
-
-   ::
-
-       python3 -m robopager.robopager -y checklist_name
+*Notice: This module uses datacoco*\ core's config() to parse the
+configuration file as default. We also integrate AWS Secret Manager as
+alternative configuration method to retriece your credentials but this
+function is still in progress. Please check back for update. The
+parameter "-cf" in command line is to choose whether using datacoco or
+secret manager\_
 
 Notes
 -----
@@ -168,14 +169,10 @@ Notes
 
    -  connect to redis cli, assuming database 1 will be used for
       robopager: ``redis-cli -n 1``
-   -  list keys based on pattern: ``keys *`` or ``keys dw_Lockers*``
+   -  list keys based on pattern: ``keys *`` or ``keys key_name*``
    -  get all fields within a hash (Robopager stores all keys as
-      hashes): ``hgetall dw_Lockers_245am``
+      hashes): ``hgetall key_full_name``
 
--  This modules uses datacoco\_core's config() to parse the
-   configuration file. If you have preferable configuration tool, you
-   can change to it and the corresponding parsing code in the beginning
-   section of robopager.py
 -  Robopager submits to PagerDuty using a deterministic key, therefore
    you can have multiple Robopager instance running (for redundancy
    without producing duplicate tickets). There is a special offset\_sec
@@ -213,7 +210,8 @@ Testing
 
     pip install -r requirements-dev.txt
 
-To run the testing suite, simply run the command:
+To run the testing suite, please modify the credentials in test\_data
+folder, then simply run the command:
 
 ::
 
@@ -223,4 +221,5 @@ Contributing
 ------------
 
 Contributions to Robopager are welcome! Please reference guidelines to
-help with setting up your development environment **here**
+help with setting up your development environment
+**`here <https://github.com/equinoxfitness/robopager/blob/master/CONTRIBUTING.rst>`__**
