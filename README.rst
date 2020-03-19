@@ -107,17 +107,20 @@ for both types of job.
             - "Great - You look awesome!"
             - "Good - You look OK!"
 
-**Intraday Latency Check** \* type: batchy \* pd\_description: a brief
-description of the check job \* pd\_service: the "Integration Key" of a
-PagerDuty service only for this specific job, usually consists of 32
-characters \* wf\_name: name of the scheduled workflow you want to
-monitor, please enter the correct and accurate name \* check\_time: the
-time at which robopager actually starts checking \* poll\_sec: the
-number of seconds in between checks \* latency\_min: when it has been
-more than x minutes from last end time a failure will be generated,
-warnings at 80% of threshold
+**Intraday Latency Check**
 
-::
+-  type: batchy
+-  pd\_description: a brief description of the check job
+-  pd\_service: the "Integration Key" of a PagerDuty service only for
+   this specific job, usually consists of 32 characters
+-  wf\_name: name of the scheduled workflow you want to monitor,
+   please enter the correct and accurate name
+-  check\_time: the time at which robopager actually starts checking
+-  poll\_sec: the number of seconds in between checks
+-  latency\_min: when it has been more than x minutes from last end time
+   a failure will be generated, warnings at 80% of threshold
+
+   ::
 
     unique_latency_check_name:
         type: batchy
@@ -132,11 +135,12 @@ Quick Start
 -----------
 
 After finish all the setups above, you can start to use the tool to help
-monitor you scheduled jobs. Robopager has two modes: \* Single Job Mode:
-This will run the specific check and exit when complete. Execute with a
--c parameter and a specific job name you want to run. For example:
+monitor you scheduled jobs. 
+Robopager has two modes:
+-  Single Job Mode: This will run the specific check and exit when complete. Execute with a
+   -c parameter and a specific job name you want to run. For example:
 
-::
+   ::
 
     python3 -m robopager.robopager -c unique_email_check_job_name -y checklist_file_path -cf core -p config_file_path
 
@@ -147,12 +151,12 @@ This will run the specific check and exit when complete. Execute with a
 
        python3 -m robopager.robopager -y checklist_file_path -cf core -p config_file_path
 
-*Notice: This module uses datacoco*\ core's config() to parse the
+*Notice: This module uses datacoco\_core's config() to parse the
 configuration file as default. We also integrate AWS Secret Manager as
 alternative configuration method to retriece your credentials but this
 function is still in progress. Please check back for update. The
 parameter "-cf" in command line is to choose whether using datacoco or
-secret manager\_
+secret manager*
 
 Notes
 -----
