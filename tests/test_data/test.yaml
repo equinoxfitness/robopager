@@ -1,0 +1,8 @@
+checklist_parse_test:
+  type: batchy
+  pd_description: "Test for parsing checklist",
+  pd_service: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  wf_name: "checklist_parse_test",
+  check_time: "09:00",
+  poll_sec: 180,
+  latency_min: 60
