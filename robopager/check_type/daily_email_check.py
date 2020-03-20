@@ -107,21 +107,6 @@ class CheckEmails:
         log.l("emails recieved: " + ",".join(self.emails_received))
         return self.emails_received
 
-    @staticmethod
-    def parse_gmail_dates(gdate):
-        try:
-            date = datetime.strptime(gdate[:-6], "%d %b %Y %H:%M:%S")
-            return date
-        except Exception:
-            pass
-
-        try:
-            date = datetime.strptime(gdate[:-6], "%a, %d %b %Y %H:%M:%S")
-            return date
-        except Exception:
-            date = datetime.strptime(gdate[:-12], "%a, %d %b %Y %H:%M:%S")
-            return date
-
     def check_missing_emails(self):
         """
         compares list of expected subjects to what is retrieved
