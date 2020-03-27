@@ -8,7 +8,7 @@ pipeline{
         }
     }
     environment {
-        CODACY_PROJECT_TOKEN = credentials('<codacy-project-name>')
+        CODACY_PROJECT_TOKEN = credentials('robopager')
     }
     triggers {
         pollSCM 'H/10 * * * *'
@@ -20,14 +20,14 @@ pipeline{
     stages{
         stage('Coverage to Codacy'){
             steps {
-                slackSend (color: 'good', message: "<project_name>_pypi_pipeline_${GIT_BRANCH} - Starting build #${BUILD_NUMBER}. (<${env.BUILD_URL}|Open>)")
+                slackSend (color: 'good', message: "robopager_pypi_pipeline_${GIT_BRANCH} - Starting build #${BUILD_NUMBER}. (<${env.BUILD_URL}|Open>)")
 
                 echo "coverage"
            
                 sh "pip install -r requirements-dev.txt"
-                sh "black --check <project_name> tests"
+                sh "black --check robopager tests"
                 sh "pip install coverage codacy-coverage"
-                sh "coverage run -m unittest tests/test_project_name.py"
+                // sh "coverage run -m unittest tests/test_project_name.py"
                 sh "coverage xml -i"
                 sh "python-codacy-coverage -r coverage.xml"
             }
@@ -89,11 +89,11 @@ pipeline{
     post {
         failure {
             echo "fail"
-            slackSend (color: 'danger', message: "@here <project_name>_pypi_pipeline_${GIT_BRANCH} - Build #${BUILD_NUMBER} Failed. (<${env.BUILD_URL}|Open>)")
+            slackSend (color: 'danger', message: "@here robopager_pypi_pipeline_${GIT_BRANCH} - Build #${BUILD_NUMBER} Failed. (<${env.BUILD_URL}|Open>)")
         }
         success {
             echo "good"
-            slackSend (color: 'good', message: "<project_name>_pypi_pipeline_${GIT_BRANCH} - Build #${BUILD_NUMBER} Success. (<${env.BUILD_URL}|Open>)")
+            slackSend (color: 'good', message: "robopager_pypi_pipeline_${GIT_BRANCH} - Build #${BUILD_NUMBER} Success. (<${env.BUILD_URL}|Open>)")
         }
         always {
             echo 'Updating folder permissions.'
