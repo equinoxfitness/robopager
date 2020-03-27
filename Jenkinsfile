@@ -8,7 +8,7 @@ pipeline{
         }
     }
     environment {
-        CODACY_PROJECT_TOKEN = credentials('robopager')
+        CODACY_PROJECT_TOKEN = credentials('codacy-coco-robopager')
     }
     triggers {
         pollSCM 'H/10 * * * *'
@@ -27,7 +27,7 @@ pipeline{
                 sh "pip install -r requirements-dev.txt"
                 sh "black --check robopager tests"
                 sh "pip install coverage codacy-coverage"
-                // sh "coverage run -m unittest tests/test_project_name.py"
+                sh "coverage run -m unittest tests/test_robopager.py"
                 sh "coverage xml -i"
                 sh "python-codacy-coverage -r coverage.xml"
             }

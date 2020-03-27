@@ -5,15 +5,15 @@ Robopager
     :target: https://badge.fury.io/py/robopager
     :alt: PyPI Version
 
-.. image:: https://readthedocs.org/projects/robopager/badge/?version=latest
-    :target: https://robopager.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+. image:: https://api.codacy.com/project/badge/Grade/c0e6c19dc2d8471da1b1b6099e1e46a9
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/gh/equinoxfitness/robopager?utm_source=github.com&utm_medium=referral&utm_content=equinoxfitness/robopager&utm_campaign=Badge_Grade_Dashboard
 
-.. image:: https://api.codacy.com/project/badge/Grade/project-id-in-codacy
+.. image:: https://api.codacy.com/project/badge/Grade/c0e6c19dc2d8471da1b1b6099e1e46a9
     :target: https://www.codacy.com/gh/equinoxfitness/robopager?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/robopager&amp;utm_campaign=Badge_Grade
     :alt: Code Quality Grade
 
-.. image:: https://api.codacy.com/project/badge/Coverage/project-id-in-codacy
+.. image:: https://api.codacy.com/project/badge/Coverage/c0e6c19dc2d8471da1b1b6099e1e46a9
     :target: https://www.codacy.com/gh/equinoxfitness/robopager?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/robopager&amp;utm_campaign=Badge_Coverage
     :alt: Coverage
 
