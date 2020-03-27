@@ -1,6 +1,27 @@
 Robopager
 =========
 
+.. image:: https://badge.fury.io/py/project-name.svg
+    :target: https://badge.fury.io/py/project-name
+    :alt: PyPI Version
+
+.. image:: https://readthedocs.org/projects/project-name/badge/?version=latest
+    :target: https://project-name.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://api.codacy.com/project/badge/Grade/project-id-in-codacy
+    :target: https://www.codacy.com/gh/equinoxfitness/project-name?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/project-name&amp;utm_campaign=Badge_Grade
+    :alt: Code Quality Grade
+
+.. image:: https://api.codacy.com/project/badge/Coverage/project-id-in-codacy
+    :target: https://www.codacy.com/gh/equinoxfitness/project-name?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/project-name&amp;utm_campaign=Badge_Coverage
+    :alt: Coverage
+
+.. image:: https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg
+    :target: https://github.com/equinoxfitness/project-name/blob/master/CODE_OF_CONDUCT.rst
+    :alt: Code of Conduct
+
+
 Robopager is a job monitor and notification tool designed for daily
 email check and job latency check. The daily email check function can
 help you to monitor your inbox and whether you receive the expected
