@@ -1,6 +1,10 @@
 Robopager
 =========
 
+.. image:: https://api.codacy.com/project/badge/Grade/c0e6c19dc2d8471da1b1b6099e1e46a9
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/gh/equinoxfitness/robopager?utm_source=github.com&utm_medium=referral&utm_content=equinoxfitness/robopager&utm_campaign=Badge_Grade_Dashboard
+
 .. image:: https://badge.fury.io/py/robopager.svg
     :target: https://badge.fury.io/py/robopager
     :alt: PyPI Version
