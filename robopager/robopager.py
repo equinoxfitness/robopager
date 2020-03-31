@@ -8,18 +8,19 @@ import schedule
 import time
 import threading
 import redis
+import sys
 from datacoco_core.logger import Logger
 from robopager.config_wrapper import ConfigWrapper
 from robopager.check_type.daily_email_check import CheckEmails
 from robopager.check_type.intraday_latency_check import CheckWF
 
 
-# -------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------
 
 log = Logger()
 KEY_PREFIX = "rp"
 
-# -------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------
 
 # common functions
 
@@ -68,7 +69,7 @@ def str_to_bool(en):
         raise ValueError("please enter correct boolean values to enable Redis")
 
 
-# -------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------
 # core robopager
 
 
@@ -199,7 +200,7 @@ class PDInteraction:
 
         if r.status_code != 200:
             log.l("Error triggering pager duty")
-            raise
+            sys.exit()
         else:
             # log the newly-triggered incident to Redis
             ri.log_to_redis(incident, payload)
@@ -422,12 +423,12 @@ if __name__ == "__main__":
         log.l("single job mode")
         if check not in check_list:
             log.l("invalid test, please review checklist.yaml")
-            raise
+            sys.exit()
         else:
             kw = check_list[check]
             kw["check"] = check
             run_test(**kw)
-            exit()
+            sys.exit()
     else:
         log.l("service mode")
 

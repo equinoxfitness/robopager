@@ -2,6 +2,7 @@
 
 import imaplib
 import email
+import sys
 from datetime import datetime, date
 import pytz
 from datacoco_core.logger import Logger
@@ -57,8 +58,7 @@ class CheckEmails:
         )
         if typ != "OK":
             log.l("Not able to sign in!")
-            raise
-            exit(1)
+            sys.exit()
 
     def get_emails(self):
         """
@@ -84,7 +84,7 @@ class CheckEmails:
         typ, data = self.imapSession.search(None, imap_search)
         if typ != "OK":
             log.l("Error searching Inbox.")
-            raise
+            sys.exit()
         log.l(str(len(data[0].split())) + " emails found")
 
         # Iterating over all emails
